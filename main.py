@@ -19,7 +19,7 @@ if __name__ == "__main__":
     url = get_user_input("URL")
     amount = int(get_user_input("Amount of requests"))
     workers = int(get_user_input("Amount of workers (recommended = 8)"))
-    throttle = float(get_user_input("Throttle time (recommended = 1.5)"))
+    throttle = float(get_user_input("Throttle time (seconds)"))
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
