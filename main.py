@@ -19,13 +19,18 @@ if __name__ == "__main__":
     url = get_user_input("URL")
     amount = int(get_user_input("Amount of requests"))
     workers = int(get_user_input("Amount of workers (recommended = 8)"))
-    throttle = float(get_user_input("Throttle time (seconds)"))
+    throttle = float(get_user_input("Throttle time (recommended = 1.5)"))
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
                       'Chrome/58.0.3029.110 Safari/537.36'
     }
 
+    print(
+        f"This will take"
+        f" {amount * throttle} seconds,"
+        f" {((amount * throttle) / 60)} minutes and"
+        f" {(((amount * throttle) / 60) / 60)} hours!")
     counter = 0
 
     with ThreadPoolExecutor(max_workers=workers) as executor:
